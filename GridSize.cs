@@ -4,6 +4,8 @@ namespace SudokuSolverSharp
 {
     public class GridSize
     {
+        public static readonly GridSize Default = new GridSize(3, 3);
+        
         public int BandSize { get { return BoxHeight; } }
         
         public int BoxHeight { get; private set; }

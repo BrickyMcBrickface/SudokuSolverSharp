@@ -20,7 +20,7 @@ namespace SudokuSolverSharp
             return String.Join(", ", _cells.Select(cell => cell.Value));
         }
         
-        public static Grid Create(GridSize gridSize, int[] values)
+        public static Grid Load(GridSize gridSize, int[] values)
         {
             if (gridSize == null)
             {
