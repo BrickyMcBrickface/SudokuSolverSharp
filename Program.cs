@@ -10,21 +10,28 @@ namespace SudokuSolverSharp
             // Solve the 9x9 puzzles.
             SolvePuzzle(GridSize.Default, Puzzle9x9.EasyPuzzle, (solution, time) => 
             {
-                OutputPuzzleSolved(GridSize.Default, "Easy", time);
+                OutputPuzzleSolved(solution.SolvedGrid.GridSize, "Easy", time);
                 OutputPuzzleSolution(solution.SolvedGrid);
             }, (time) => Console.WriteLine("Solution not found!!"));
             
             SolvePuzzle(GridSize.Default, Puzzle9x9.MediumPuzzle, (solution, time) => 
             {
-                OutputPuzzleSolved(GridSize.Default, "Medium", time);
+                OutputPuzzleSolved(solution.SolvedGrid.GridSize, "Medium", time);
                 OutputPuzzleSolution(solution.SolvedGrid);
             }, (time) => Console.WriteLine("Solution not found!!"));
             
             SolvePuzzle(GridSize.Default, Puzzle9x9.HardPuzzle, (solution, time) => 
             {
-                OutputPuzzleSolved(GridSize.Default, "Hard", time);
+                OutputPuzzleSolved(solution.SolvedGrid.GridSize, "Hard", time);
                 OutputPuzzleSolution(solution.SolvedGrid);
             }, (time) => Console.WriteLine("Solution not found!!"));
+            
+            // Solve the 16x16 puzzle.
+            // SolvePuzzle(new GridSize(4, 4), Puzzle16x16.UnknownDifficultyPuzzle, (solution, time) =>
+            // {
+            //     OutputPuzzleSolved(solution.SolvedGrid.GridSize, "Unknown difficulty", time);
+            //     OutputPuzzleSolution(solution.SolvedGrid);
+            // }, (time) => Console.WriteLine("Solution not found!!"));
         }
         
         private static void OutputPuzzleSolved(GridSize gridSize, string label, long time)
